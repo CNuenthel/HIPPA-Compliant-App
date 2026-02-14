@@ -1,6 +1,6 @@
 services:
   health_portal:
-    container_name: brightside
+    container_name: healthnow
     restart: unless-stopped
     build: .
     ports:
@@ -26,7 +26,7 @@ services:
 
 networks:
   brightside:
-    name: brightside
+    name: healthnow
     driver: bridge
     ipam:
       driver: default
