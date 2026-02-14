@@ -16,7 +16,7 @@ services:
     security_opt:
       - no-new-privileges:true
     networks:
-      brightside:
+      healthnow:
         ipv4_address: 172.30.30.2
     deploy:
       resources:
@@ -25,7 +25,7 @@ services:
           memory: 512M
 
 networks:
-  brightside:
+  healthnow:
     name: healthnow
     driver: bridge
     ipam:

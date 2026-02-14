@@ -120,4 +120,4 @@ This software is provided "as is", which in the medical data industry is a bold 
 
 ---
 
-*BrightSide Health Portal — "Your data is probably safe with us."™*
+*HealthNow Health Portal — "Your data is probably safe with us."™*
