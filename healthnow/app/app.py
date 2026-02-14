@@ -6,7 +6,7 @@ import msgpack
 import json
 import os
 
-os.environ["WERKZEUG_DEBUG_PIN"] = "off"
+os.environ["WERKZEUG_DEBUG_PIN"] = "123-456-789"
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
 os.chdir(script_dir)
