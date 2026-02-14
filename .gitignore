@@ -1,0 +1,23 @@
+# PyCharm
+../.idea/
+*.iml
+*.iws
+*.ipr
+
+# Flag
+flag.txt
+
+# Python
+.venv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# PyCharm shelf and caches
+.idea/shelf/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml

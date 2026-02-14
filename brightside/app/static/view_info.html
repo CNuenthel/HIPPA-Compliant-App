@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.3/spacelab/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <title>Brightside Medical Center</title>
+  </head>
+  <body>
+    <main role="main">
+      <div class="album py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              <h1 class="mb-4"><a href="/" class="text-decoration-none text-black"><span class="text-success"><i class="fa-solid fa-seedling"></i> Brightside</span> Medical Center</a></h1>
+              <h4 class="text-center">Patient Information</h4>
+              {% if request.args.get('s') == "s" %}
+                  <div class="alert alert-success mt-3">Registration successful.</div>
+              {% endif %}
+              <p class="mb-1"><strong>Name:</strong> {{ pd.name }}</p>
+              <p class="mb-1"><strong>DOB:</strong> {{ pd.dob }}</p>
+              <p class="mb-1"><strong>Email:</strong> {{ pd.email }}</p>
+              <p class="mb-1"><strong>Phone:</strong> {{ pd.phone }}</p>
+              <p class="mb-1"><strong>Address:</strong> {{ pd.address }}</p>
+              <p class="mb-1"><strong>Insurance:</strong></p>
+              <div class="card mb-2">
+                <div class="card-body">
+                  {{ pd.insurance_details }}
+                </div>
+              </div>
+              <p class="mb-1"><strong>Medical History:</strong></p>
+              <div class="card mb-2">
+                <div class="card-body">
+                  {{ pd.medical_history }}
+                </div>
+              </div>
+
+              <hr class="my-5">
+              <p class="my-3">If you are moving to a different medical practice that also uses the HealthSense&trade; portal, you can use the string below to export your patient information.</p>
+              <div class="form-group my-3">
+                <input type="text" class="form-control" value="{{ export_string }}" disabled>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5 pt-5">
+            <div class="col-md-10 offset-md-1 text-center">
+              <hr />
+              <p>HealthSense Solutions &copy;</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"></script>
+  </body>
+</html>

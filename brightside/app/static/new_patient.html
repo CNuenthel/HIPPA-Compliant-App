@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.3/spacelab/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <title>Brightside Medical Center</title>
+  </head>
+  <body>
+    <main role="main">
+      <div class="album py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              <h1 class="mb-4"><a href="/" class="text-decoration-none text-black"><span class="text-success"><i class="fa-solid fa-seedling"></i> Brightside</span> Medical Center</a></h1>
+              <h4 class="text-center">New Patient Registration Form</h4>
+              {% if import_error %}
+                <div class="alert alert-danger mt-3">Import failed. Please try again.</div>
+              {% endif %}
+              {% if create_failed %}
+                <div class="alert alert-danger mt-3">
+                  <p>Registration failed. User with this email address already exists. Provided information:</p>
+                  <pre class="mt-2 mb-0">{{ info_provided }}</pre>
+                </div>
+              {% endif %}
+
+              <form method="POST">
+                <input type="hidden" name="type" value="manual">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group mb-3">
+                      <label for="name">Legal Full Name</label>
+                      <input id="name" name="name" type="text" required="required" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group mb-3">
+                      <label for="ssn">SSN</label>
+                      <input id="ssn" name="ssn" type="text" required="required" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group mb-3">
+                      <label for="email">Email:</label>
+                      <input id="email" name="email" type="email" class="form-control" required="required">
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group mb-3">
+                      <label for="phone">Phone Number</label>
+                      <input id="phone" name="phone" type="text" class="form-control" required="required">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group mb-3">
+                      <label for="address">Address</label>
+                      <input id="address" name="address" type="text" class="form-control" required="required">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group mb-3">
+                      <label for="dob">Date of Birth</label>
+                      <input id="dob" name="dob" type="text" class="form-control" required="required">
+                    </div>
+                  </div>
+
+
+
+                </div>
+                <div class="form-group mb-3">
+                  <label for="insurance_details">Insurance Details</label>
+                  <textarea id="insurance_details" name="insurance_details" cols="40" rows="2" class="form-control"></textarea>
+                </div>
+                <div class="form-group my-3">
+                  <label for="medical_history">Past Medical History</label>
+                  <textarea id="medical_history" name="medical_history" cols="40" rows="3" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                  <button name="submit" type="submit" class="btn btn-info">Submit Registration</button>
+                </div>
+              </form>
+              <hr class="my-5">
+              <h4 class="text-center">Or import from another HealthSense&trade; Portal</h4>
+              <p class="my-3">If your previous doctor used a similar patient portal, you may be able to simply paste an encrypted export of your patient information below.</p>
+
+              <form method="POST">
+                <input type="hidden" name="type" value="import">
+                <div class="form-group my-3">
+                  <label for="export_string">Patient Info Export String</label>
+                  <textarea id="export_string" name="export_string" cols="40" rows="3" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                  <button name="submit" type="submit" class="btn btn-info">Import</button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+          <div class="row mt-5 pt-5">
+            <div class="col-md-10 offset-md-1 text-center">
+              <hr />
+              <p>HealthSense Solutions &copy;</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"></script>
+  </body>
+</html>

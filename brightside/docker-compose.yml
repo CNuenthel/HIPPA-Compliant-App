@@ -1,0 +1,35 @@
+services:
+  health_portal:
+    container_name: brightside
+    restart: unless-stopped
+    build: .
+    ports:
+      - "127.0.0.1:3000:8000"
+    volumes:
+      - ./app/data:/app/data
+    user: "1000:1000"
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      brightside:
+        ipv4_address: 172.30.30.2
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+
+networks:
+  brightside:
+    name: brightside
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.30.30.0/24
+          gateway: 172.30.30.1

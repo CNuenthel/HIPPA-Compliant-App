@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.3/spacelab/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <title>Brightside Medical Center</title>
+  </head>
+  <body>
+    <main role="main">
+      <div class="album py-5">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              <div class="row">
+                <div class="col-md-7 col-lg-8">
+                  <h1 class="mb-3"><span class="text-success">Brightside</span> Medical Center</h1>
+                  <p>Brightside Family Medicine is a primary care practice located in the heart of the Akron, OH community. We specialize in personalized and high-quality medical care for the whole family. Our team of experienced doctors offers everything from preventive care to chronic disease management. We are dedicated to providing our patients with the most up-to-date treatment options and amenities to make your visit as comfortable and stress-free as possible.</p>
+                  <p>Our most common services include:</p>
+                  <ul>
+                    <li>Immunizations</li>
+                    <li>Annual exams</li>
+                    <li>Sports physicals</li>
+                    <li>Much more</li>
+                    <li>Certificates of Deposit</li>
+                  </ul>
+                  <p>Our address: 22 Woodland Street, Akron, OH (next to Kroger)</p>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                  <h1 class="text-success text-center mb-3"><i class="fa-solid fa-seedling"></i></h1>
+                  <h4 class="mb-3 text-center">Patient Onboarding</h4>
+                  <hr>
+                  {% if request.args.get('e') == "1" %}
+                    <div class="alert alert-danger mt-3">Invalid request. Please try again.</div>
+                  {% endif %}
+                  {% if request.args.get('e') == "2" %}
+                    <div class="alert alert-danger mt-3">Email not found. Please try again.</div>
+                  {% endif %}
+                  {% if request.args.get('e') == "3" %}
+                    <div class="alert alert-danger mt-3">Email and SSN don't match. Please try again.</div>
+                  {% endif %}
+
+                  <h5 class="text-center">New Patients</h5>
+                  <div class="d-grid gap-2 mb-4">
+                    <a href="./new_patient" class="btn text-center btn-success mb-3">New Patient Registration</a>
+                  </div>
+
+                  <h5 class="text-center">Old Patients</h5>
+                  <form method="GET" action="view_info">
+                    <label class="mb-1">Email:</label>
+                    <input type="text" name="email" id="member_id" class="form-control mb-1" required>
+                    <label class="mb-1">SSN:</label>
+                    <input type="text" name="ssn" class="form-control mb-2" required>
+                    <div class="d-grid gap-2">
+                      <button type="submit" class="btn btn-info text-center">Check Your Information</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5 pt-5">
+            <div class="col-md-10 offset-md-1 text-center">
+              <hr />
+              <p>HealthSense Solutions &copy;</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"></script>
+  </body>
+</html>
