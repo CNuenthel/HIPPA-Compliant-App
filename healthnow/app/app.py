@@ -28,6 +28,7 @@ def store_patient_data(data):
 
 
 def get_patient_data(email):
+    FLAG_H3110_TH3R3 = base64.b64decode("RkxBR3tIMzExMF9USDNSM30=").decode()
     with open(get_fname({"email": email}), "rb") as f:
         return msgpack.unpackb(crypt(f.read()))
 
