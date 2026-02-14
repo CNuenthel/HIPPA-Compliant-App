@@ -61,7 +61,7 @@ We have carefully considered the following threat actors and our mitigation stra
 
 ```bash
 # Clone the repo
-git clone https://github.com/HIPPA-Compliant-App/health-portal
+git clone https://github.com/CNuenthel/HIPPA-Compliant-App.git
 
 # Definitely read the Dockerfile before running this
 # (we'll wait)
