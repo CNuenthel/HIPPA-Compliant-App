@@ -6,19 +6,6 @@
 
 ---
 
-## 🔒 Security Features
-
-BrightSide Health Portal is **absolutely, 100%, without-a-shadow-of-a-doubt** the most secure medical data platform ever conceived by human hands. Here's why you can sleep soundly at night:
-
-- **Running as root** — We *were* doing this. But then we fixed it. We're mentioning it here for transparency and absolutely not because it was in the git history.
-- **Read-only filesystem** — Hackers can't write malware to a filesystem that doesn't let them write anything. Checkmate, hackers. Oh wait, we have to right secure patient files. Disregard.
-- **Port bound to localhost** — The outside world cannot reach this app directly. They would first have to compromise nginx. And then the Docker network. And then... okay it's fine, it's fine.
-- **Capability dropping** — We dropped ALL capabilities. The container has fewer rights than an unpaid intern.
-- **No-new-privileges** — Processes cannot elevate privileges. This was added after we googled "what is a setuid binary" at 11pm.
-- **Memory limited to 512MB** — If someone tries to run a cryptominer in our container, they'll have a _very_ bad time.
-
----
-
 ## 🏆 Compliance
 
 BrightSide Health Portal is compliant with the following standards:
