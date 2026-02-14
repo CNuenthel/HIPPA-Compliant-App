@@ -1,4 +1,4 @@
-# 🏥 BrightSide Health Portal
+# 🏥 HealthNow Health Portal
 
 ### *The World's Most Secure Medical Data Storage Solution™*
 
@@ -8,7 +8,7 @@
 
 ## 🏆 Compliance
 
-BrightSide Health Portal is compliant with the following standards:
+HealthNow Health Portal is compliant with the following standards:
 
 - ✅ **HIPAA** — We have read the Wikipedia article for HIPAA in full
 - ✅ **SOC 2** — We know what this acronym stands for
@@ -29,7 +29,7 @@ Internet
 nginx (we pinky-promise this is configured correctly)
    │
    ▼
-brightside Docker network (a strongly-worded barrier)
+HealthNow Docker network (a strongly-worded barrier)
    │
    ▼
 health_portal:3000:8000 (your data, probably fine)
@@ -61,7 +61,7 @@ We have carefully considered the following threat actors and our mitigation stra
 
 ```bash
 # Clone the repo
-git clone https://github.com/brightside/health-portal
+git clone https://github.com/HIPPA-Compliant-App/health-portal
 
 # Definitely read the Dockerfile before running this
 # (we'll wait)
@@ -108,7 +108,7 @@ Please do not contribute vulnerabilities. We are working very hard to remove the
 
 If you find a security issue, please disclose it responsibly by:
 1. Opening a GitHub issue titled "URGENT"
-2. Sending an email to security@brightside.example that nobody monitors
+2. Sending an email to security@healthnow.xyz that nobody monitors
 3. Tweeting at us
 4. Giving up and just telling us in Slack
 
