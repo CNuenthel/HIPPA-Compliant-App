@@ -32,7 +32,7 @@ nginx (we pinky-promise this is configured correctly)
 brightside Docker network (a strongly-worded barrier)
    │
    ▼
-health_portal:8000 (your data, probably fine)
+health_portal:3000:8000 (your data, probably fine)
    │
    ▼
 ./app/data (a folder on someone's computer)
